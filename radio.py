@@ -9,7 +9,7 @@ player = vlc_instance.media_player_new()
 # Define radio stations and their stream URLs
 radio_stations = {
     "Eldoradio": "https://stream.eldo.lu/data/live/radio/eldo/playlist.m3u8",
-    "RTL.lu": "https://stream.rtl.lu/live/radio/rtl/playlist.m3u8"
+    "RTL.lu": "https://live-edge.rtl.lu/radio/rtl/playlist.m3u8"
 }
 
 current_station = None
@@ -25,6 +25,7 @@ def play_radio(station_name):
         media = vlc_instance.media_new(stream_url)
         player.set_media(media)
     player.play()
+    is_playing = True
 
 def pause_radio():
     if player.is_playing():
